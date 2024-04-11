@@ -127,3 +127,10 @@ while true;
 done
 ```
 
+## Conclusion
+
+Named pipes are a simple and effective way to implement inter-process communication in Linux. They are easy to create and use, and can be used to transfer data between processes in a secure and efficient manner. Named pipes are a powerful tool for building simple systems that require communication between multiple processes.
+
+Named pipes are very much like regular files, but they have some limitations. They are unidirectional, not persistent, and not secure. However, for many use cases, these limitations are not a problem, and named pipes are a good choice for implementing inter-process communication.
+
+They also look like sockets, but sockets can go beyond the local machine, while named pipes are limited to the local machine. Sockets can be used for network communication, while named pipes are limited to communication between processes on the same machine.
