@@ -106,3 +106,15 @@ import * as fs from "node:fs/promises";
 })();
 ```
 
+## Sample nodejs code to write to a named pipe
+
+```javascript
+import * as fs from "node:fs/promises";
+
+(async () => {
+  while (true) {
+    await fs.writeFile("/tmp/server.fifo", "Hello, World!");
+  }
+})();
+```
+
