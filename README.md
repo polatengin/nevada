@@ -94,3 +94,15 @@ cat /tmp/server.fifo
 
 - Named pipes are not suitable for selective reading and writing. If you need to read from or write to a specific position in the pipe, you will need to use a different method.
 
+## Sample nodejs code to read from a named pipe
+
+```javascript
+import * as fs from "node:fs/promises";
+
+(async () => {
+  while (true) {
+    console.log(await fs.readFile("/tmp/server.fifo", "utf8"));
+  }
+})();
+```
+
