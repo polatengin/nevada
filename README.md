@@ -59,3 +59,25 @@ We can check the file type by executing;
 stat -c %F /tmp/server.fifo
 ```
 
+## Writing to and reading from a Named Pipe
+
+We can split the terminal to demonstrate the writing and reading operations on the named pipe.
+
+```bash
+# Terminal 1
+echo "Hello, World!" > /tmp/server.fifo
+
+# Terminal 2
+cat /tmp/server.fifo
+```
+
+> Until there is a reader, the writer will be blocked. The same is true for the reader. If there is no data in the named pipe, the reader will be blocked.
+
+We used the named pipe like a channel to send data between two processes.
+
+If we add one more reader to the named pipe, we can see that the data is visible to only one of the readers.
+
+```bash
+# Terminal 3
+cat /tmp/server.fifo
+```
