@@ -81,3 +81,16 @@ If we add one more reader to the named pipe, we can see that the data is visible
 # Terminal 3
 cat /tmp/server.fifo
 ```
+
+## Cons
+
+- Named pipes are not persistent. If the named pipe is deleted, the data in the pipe will be lost.
+
+- Named pipes are unidirectional. If you need bidirectional communication, you will need to create two named pipes.
+
+- Named pipes are not suitable for large amounts of data. They are best used for small amounts of data.
+
+- Named pipes are not secure. Any process with the appropriate permissions can read from or write to a named pipe.
+
+- Named pipes are not suitable for selective reading and writing. If you need to read from or write to a specific position in the pipe, you will need to use a different method.
+
