@@ -22,3 +22,40 @@ mkfifo server.fifo
 
 This will create a named pipe with the specified name. You can then use the named pipe to read and write data between processes.
 
+## How to use a Named Pipe?
+
+Named pipes can be used in a similar way to regular files. You can read from and write to a named pipe using standard file I/O functions. For example, you can use `open`, `read`, and `write` to interact with a named pipe.
+
+When the named pipe is created, it will appear as a file in the file system. You can use the `ls` command to list the named pipe:
+
+```bash
+ls -lah
+```
+
+This will show the named pipe in the directory where it was created.
+
+We can also check the information of the named pipe using the `stat` command:
+
+```bash
+stat server.fifo
+```
+
+This will show the information of the named pipe, including the file type, permissions, and other details.
+
+```bash
+  File: server.fifo
+  Size: 0               Blocks: 0          IO Block: 4096   fifo
+Device: 8,48    Inode: 252064      Links: 1
+Access: (0644/prw-r--r--)  Uid: ( 1000/ enpolat)   Gid: ( 1000/ enpolat)
+Access: 2024-01-10 16:53:47.589330815 -0700
+Modify: 2024-01-10 16:53:47.589330815 -0700
+Change: 2024-01-10 16:53:47.589330815 -0700
+ Birth: 2024-01-10 16:53:47.589330815 -0700
+```
+
+We can check the file type by executing;
+
+```bash
+stat -c %F /tmp/server.fifo
+```
+
