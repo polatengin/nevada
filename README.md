@@ -118,3 +118,12 @@ import * as fs from "node:fs/promises";
 })();
 ```
 
+## Sample bash code to write to a named pipe
+
+```bash
+while true;
+  do tr -dc a-z </dev/urandom | head -c 255 > /tmp/server.fifo ;
+  sleep 1 ;
+done
+```
+
